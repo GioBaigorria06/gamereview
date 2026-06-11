@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GameReviews - Reseñas</title>
+  <title>GameReviews - Comunidad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
@@ -50,7 +50,6 @@
 </footer>
 
 <script>
-  // Datos iniciales por defecto si el almacenamiento local está vacío
   const INITIAL = [
     { id: 1, game: 'Elden Ring', genre: 'RPG', author: 'Marcos', platform: 'PC', stars: 5, text: 'Una obra maestra absoluta. El diseño de mundo abierto es incomparable y la dificultad está perfectamente balanceada. Cientos de horas de contenido que valen cada segundo.', date: '12 abr 2026' },
     { id: 2, game: 'God of War Ragnarök', genre: 'Acción', author: 'Valeria', platform: 'PS5', stars: 5, text: 'La historia emocional más potente que jugué en años. La relación entre Kratos y Atreus llega a su punto culminante de forma brutal y hermosa. Una joya imprescindible.', date: '10 abr 2026' },
@@ -59,7 +58,6 @@
     { id: 5, game: 'Civilization VI', genre: 'Estrategia', author: 'Ricardo', platform: 'PC', stars: 4, text: 'El clásico "una vuelta más". Sistema de distritos brillante y gran variedad de civs. Puede abrumar al principio pero es muy satisfactorio dominarlo.', date: '3 abr 2026' },
   ];
 
-  // Carga los datos guardados en el navegador o usa los iniciales
   let reviews = JSON.parse(localStorage.getItem('vg_reviews') || 'null') || INITIAL;
   let currentFilter = 'Todos';
 
@@ -71,16 +69,13 @@
     renderReviews();
   }
 
-  // Genera las estrellas dinámicas adaptadas al esquema de color oscuro
   function stars(n) {
-    return '<span style="color: var(--star)">' + '★'.repeat(n) + '</span><span style="color: var(--text-dim)">' + '☆'.repeat(5 - n) + '</span>';
+    return '<span style="color:#f5b731">' + '★'.repeat(n) + '</span><span style="color:#333">' + '☆'.repeat(5 - n) + '</span>';
   }
 
-  // Renderiza y ordena las tarjetas de forma cronológica inversa (las nuevas primero)
   function renderReviews() {
     const filtered = currentFilter === 'Todos' ? reviews : reviews.filter(r => r.genre === currentFilter);
     const sorted = [...filtered].sort((a, b) => b.id - a.id);
-    
     document.getElementById('count-bar').textContent = sorted.length === 1 ? '1 reseña' : `${sorted.length} reseñas`;
     const list = document.getElementById('reviews-list');
     
@@ -88,7 +83,6 @@
       list.innerHTML = '<div class="empty"><div class="empty-icon">🎮</div><p>No hay reseñas en esta categoría todavía.</p></div>';
       return;
     }
-    
     list.innerHTML = sorted.map(r => `
       <div class="review-card">
         <div class="review-top">
@@ -109,7 +103,7 @@
     `).join('');
   }
 
-  // Ejecución inicial al abrir la página
+  // Inicializar al cargar
   renderReviews();
 </script>
 </body>
