@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GG Reviews - Inicio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameReviews - Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-    <header>
-        <h1>GG Reviews</h1>
-        <p>Tu portal de análisis y crítica de videojuegos</p>
-    </header>
-
-    <nav>
-        <a href="index.html" class="active">Inicio</a>
-        <a href="reseñas.html">Reseñas</a>
-        <a href="contacto.html">Contacto</a>
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      <span>GameReviews</span>
+    </div>
+    <nav class="header-tabs">
+      <a href="index.html" class="tab-btn active">Inicio</a>
+      <a href="reseñas.html" class="tab-btn">Reseñas</a>
+      <a href="contacto.html" class="tab-btn">Escribir Reseña</a>
     </nav>
+  </div>
+</header>
 
-    <main class="container">
-        <section class="card">
-            <h2>Bienvenidos al Portal</h2>
-            <p>Acá vas a encontrar los análisis más honestos del mundo del gaming. Evaluamos jugabilidad, gráficos, historia y rendimiento para que sepas exactamente en qué gastar tus horas de juego.</p>
-            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Setup Gamer" class="img-responsive">
-        </section>
+<main>
+  <section class="feed-header">
+    <div>
+      <h1 class="feed-title">Tu espacio crítico de gaming</h1>
+      <div class="feed-count">Análisis honestos hechos por y para la comunidad.</div>
+    </div>
+  </section>
 
-        <section class="card">
-            <h2>Análisis Destacado de la Semana</h2>
-            <h3>The Witcher 3: Wild Hunt</h3>
-            <p>A pesar de los años, sigue siendo el rey de los RPG de mundo abierto. Una historia atrapante, personajes memorables y un mundo que se siente vivo. <a href="reseñas.html" class="link-texto">Ver más análisis...</a></p>
-        </section>
-    </main>
+  <section class="review-card">
+    <h2 style="font-family: var(--font-display); margin-bottom: 10px;">Bienvenidos al Portal</h2>
+    <p style="color: #b0afac; font-size: 14px;">Evaluamos jugabilidad, rendimiento técnico, narrativa y gráficos. No nos compran los maletines: acá vas a encontrar la posta sobre qué títulos valen realmente tu tiempo y tu dinero.</p>
+  </section>
 
-    <footer>
-        <p>&copy; 2026 GG Reviews. Desarrollado para la Primera Entrega.</p>
-    </footer>
+  <section class="review-card">
+    <h2 style="font-family: var(--font-display); margin-bottom: 10px;">Precios y Mercado Actual</h2>
+    <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 15px;">Comparativa rápida de las plataformas sugeridas y costos aproximados de los títulos del momento:</p>
+    
+    <div style="overflow-x: auto;">
+      <table id="tabla-precios">
+        <thead>
+          <tr>
+            <th>Juego Destacado</th>
+            <th>Plataforma Principal</th>
+            <th>Formato</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elden Ring</td>
+            <td>PC / PS5 / Xbox</td>
+            <td>Digital</td>
+            <td class="status-ok">Disponible</td>
+          </tr>
+          <tr>
+            <td>God of War Ragnarök</td>
+            <td>PS5 / PC</td>
+            <td>Físico & Digital</td>
+            <td class="status-ok">Disponible</td>
+          </tr>
+          <tr>
+            <td>Hades II</td>
+            <td>PC</td>
+            <td>Early Access</td>
+            <td class="status-warn">En desarrollo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 GameReviews. Desarrollado para la Primera Entrega.</p>
+</footer>
 
 </body>
 </html>
