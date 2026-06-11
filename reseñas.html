@@ -1,110 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GameReviews - Comunidad</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GG Reviews - Reseñas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="logo">
-      <span class="logo-dot"></span>
-      <span>GameReviews</span>
-    </div>
-    <nav class="header-tabs">
-      <a href="index.html" class="tab-btn">Inicio</a>
-      <a href="reseñas.html" class="tab-btn active">Reseñas</a>
-      <a href="contacto.html" class="tab-btn">Escribir Reseña</a>
+    <header>
+        <h1>GG Reviews</h1>
+        <p>Tu portal de análisis y crítica de videojuegos</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="reseñas.html" class="active">Reseñas</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
-  </div>
-</header>
 
-<main>
-  <div class="feed-header">
-    <div>
-      <div class="feed-title">Todas las reseñas</div>
-      <div class="feed-count" id="count-bar">Cargando...</div>
-    </div>
-  </div>
-
-  <div class="filters" id="filters">
-    <button class="filter-pill active" onclick="setFilter('Todos')">Todos</button>
-    <button class="filter-pill" onclick="setFilter('Acción')">Acción</button>
-    <button class="filter-pill" onclick="setFilter('RPG')">RPG</button>
-    <button class="filter-pill" onclick="setFilter('Aventura')">Aventura</button>
-    <button class="filter-pill" onclick="setFilter('Deportes')">Deportes</button>
-    <button class="filter-pill" onclick="setFilter('Estrategia')">Estrategia</button>
-    <button class="filter-pill" onclick="setFilter('Terror')">Terror</button>
-  </div>
-
-  <div id="reviews-list"></div>
-</main>
-
-<footer>
-  <p>&copy; 2026 GameReviews. Desarrollado para la Primera Entrega.</p>
-</footer>
-
-<script>
-  const INITIAL = [
-    { id: 1, game: 'Elden Ring', genre: 'RPG', author: 'Marcos', platform: 'PC', stars: 5, text: 'Una obra maestra absoluta. El diseño de mundo abierto es incomparable y la dificultad está perfectamente balanceada. Cientos de horas de contenido que valen cada segundo.', date: '12 abr 2026' },
-    { id: 2, game: 'God of War Ragnarök', genre: 'Acción', author: 'Valeria', platform: 'PS5', stars: 5, text: 'La historia emocional más potente que jugué en años. La relación entre Kratos y Atreus llega a su punto culminante de forma brutal y hermosa. Una joya imprescindible.', date: '10 abr 2026' },
-    { id: 3, game: 'Hollow Knight', genre: 'Aventura', author: 'Julián', platform: 'Nintendo Switch', stars: 4, text: 'Un metroidvania increíble con arte precioso y combate preciso. La exploración es adictiva aunque algunos jefes al final se sienten un poco repetitivos.', date: '8 abr 2026' },
-    { id: 4, game: 'Resident Evil Village', genre: 'Terror', author: 'Ana', platform: 'PS5', stars: 4, text: 'Atmósfera increíble y los primeros actos son terroríficos de verdad. La señora Dimitrescu ya es icónica. Pierde algo de ritmo hacia el final pero vale la pena.', date: '5 abr 2026' },
-    { id: 5, game: 'Civilization VI', genre: 'Estrategia', author: 'Ricardo', platform: 'PC', stars: 4, text: 'El clásico "una vuelta más". Sistema de distritos brillante y gran variedad de civs. Puede abrumar al principio pero es muy satisfactorio dominarlo.', date: '3 abr 2026' },
-  ];
-
-  let reviews = JSON.parse(localStorage.getItem('vg_reviews') || 'null') || INITIAL;
-  let currentFilter = 'Todos';
-
-  function setFilter(g) {
-    currentFilter = g;
-    document.querySelectorAll('.filter-pill').forEach(p =>
-      p.classList.toggle('active', p.textContent.trim() === g)
-    );
-    renderReviews();
-  }
-
-  function stars(n) {
-    return '<span style="color:#f5b731">' + '★'.repeat(n) + '</span><span style="color:#333">' + '☆'.repeat(5 - n) + '</span>';
-  }
-
-  function renderReviews() {
-    const filtered = currentFilter === 'Todos' ? reviews : reviews.filter(r => r.genre === currentFilter);
-    const sorted = [...filtered].sort((a, b) => b.id - a.id);
-    document.getElementById('count-bar').textContent = sorted.length === 1 ? '1 reseña' : `${sorted.length} reseñas`;
-    const list = document.getElementById('reviews-list');
-    
-    if (!sorted.length) {
-      list.innerHTML = '<div class="empty"><div class="empty-icon">🎮</div><p>No hay reseñas en esta categoría todavía.</p></div>';
-      return;
-    }
-    list.innerHTML = sorted.map(r => `
-      <div class="review-card">
-        <div class="review-top">
-          <div>
-            <div class="review-game">${r.game}</div>
-            <div class="review-stars">${stars(r.stars)}</div>
-            <div class="review-meta">
-              <span>${r.author || 'Anónimo'}</span>
-              <span class="sep">·</span>
-              <span>${r.platform}</span>
+    <main class="container">
+        <section class="card">
+            <h2>Tabla Comparativa de Lanzamientos</h2>
+            <p>Un resumen rápido de los últimos juegos testeados por nuestro equipo:</p>
+            
+            <div style="overflow-x: auto;">
+                <table id="tabla-juegos">
+                    <thead>
+                        <tr>
+                            <th>Videojuego</th>
+                            <th>Plataforma</th>
+                            <th>Género</th>
+                            <th>Puntaje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Elden Ring</td>
+                            <td>PC / PS5 / Xbox</td>
+                            <td>Acción / RPG</td>
+                            <td class="nota">9.8/10</td>
+                        </tr>
+                        <tr>
+                            <td>Cyberpunk 2077</td>
+                            <td>PC / PS5</td>
+                            <td>RPG de Ciencia Ficción</td>
+                            <td class="nota">8.5/10</td>
+                        </tr>
+                        <tr>
+                            <td>Hades II</td>
+                            <td>PC</td>
+                            <td>Roguelike</td>
+                            <td class="nota">9.2/10</td>
+                        </tr>
+                        <tr>
+                            <td>FIFA 26</td>
+                            <td>Consolas / PC</td>
+                            <td>Deportes</td>
+                            <td class="nota">6.5/10</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-          </div>
-          <span class="genre-badge">${r.genre}</span>
-        </div>
-        <div class="review-body">${r.text}</div>
-        <div class="review-date">${r.date}</div>
-      </div>
-    `).join('');
-  }
+        </section>
+    </main>
 
-  // Inicializar al cargar
-  renderReviews();
-</script>
+    <footer>
+        <p>&copy; 2026 GG Reviews. Desarrollado para la Primera Entrega.</p>
+    </footer>
+
 </body>
 </html>
