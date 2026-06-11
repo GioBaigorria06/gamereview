@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GG Reviews - Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>GG Reviews</h1>
+        <p>Tu portal de análisis y crítica de videojuegos</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="reseñas.html">Reseñas</a>
+        <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+
+    <main class="container">
+        <section class="card">
+            <h2>Unite a la Comunidad</h2>
+            <p>¿Querés sugerir un juego para que analicemos o suscribirte a nuestro newsletter? Dejanos tus datos.</p>
+            
+            <form action="#" method="POST" class="formulario-contacto">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Nicolás Tato" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interes">Plataforma Favorita:</label>
+                    <select id="interes" name="interes">
+                        <option value="pc">PC Master Race</option>
+                        <option value="playstation">PlayStation 5</option>
+                        <option value="xbox">Xbox Series X/S</option>
+                        <option value="nintendo">Nintendo Switch</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje o Sugerencia:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribí acá tu comentario..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GG Reviews. Desarrollado para la Primera Entrega.</p>
+    </footer>
+
+</body>
+</html>
