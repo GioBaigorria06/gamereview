@@ -1,151 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GameReviews - Escribir Reseña</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GG Reviews - Contacto</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="logo">
-      <span class="logo-dot"></span>
-      <span>GameReviews</span>
-    </div>
-    <nav class="header-tabs">
-      <a href="index.html" class="tab-btn">Inicio</a>
-      <a href="reseñas.html" class="tab-btn">Reseñas</a>
-      <a href="contacto.html" class="tab-btn active">Escribir Reseña</a>
+    <header>
+        <h1>GG Reviews</h1>
+        <p>Tu portal de análisis y crítica de videojuegos</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="reseñas.html">Reseñas</a>
+        <a href="contacto.html" class="active">Contacto</a>
     </nav>
-  </div>
-</header>
 
-<main>
-  <div class="form-wrap">
-    <div class="form-heading">Escribir reseña</div>
-    <div class="form-sub">Compartí tu experiencia con la comunidad en tiempo real</div>
+    <main class="container">
+        <section class="card">
+            <h2>Unite a la Comunidad</h2>
+            <p>¿Querés sugerir un juego para que analicemos o suscribirte a nuestro newsletter? Dejanos tus datos.</p>
+            
+            <form action="#" method="POST" class="formulario-contacto">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Nicolás Tato" required>
+                </div>
 
-    <div class="form-card">
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Nombre del juego *</label>
-          <input type="text" id="f-game" placeholder="Ej: Elden Ring" />
-        </div>
-        <div class="form-group">
-          <label>Género</label>
-          <select id="f-genre">
-            <option value="Acción">Acción</option>
-            <option value="RPG">RPG</option>
-            <option value="Aventura">Aventura</option>
-            <option value="Deportes">Deportes</option>
-            <option value="Estrategia">Estrategia</option>
-            <option value="Terror">Terror</option>
-            <option value="Otro">Otro</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Tu nombre</label>
-          <input type="text" id="f-author" placeholder="Anónimo" />
-        </div>
-        <div class="form-group">
-          <label>Plataforma</label>
-          <select id="f-platform">
-            <option>PC</option>
-            <option>PS5</option>
-            <option>PS4</option>
-            <option>Xbox Series X</option>
-            <option>Xbox One</option>
-            <option>Nintendo Switch</option>
-            <option>Móvil</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Puntuación *</label>
-        <div class="stars-row">
-          <button class="star-b" onclick="setStar(1)">★</button>
-          <button class="star-b" onclick="setStar(2)">★</button>
-          <button class="star-b" onclick="setStar(3)">★</button>
-          <button class="star-b" onclick="setStar(4)">★</button>
-          <button class="star-b" onclick="setStar(5)">★</button>
-          <span class="star-text" id="star-label">Sin puntuación</span>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Tu reseña *</label>
-        <textarea id="f-text" placeholder="Escribí aquí tu opinión sobre el juego..."></textarea>
-      </div>
-      <button class="submit-btn" onclick="submitReview()">Publicar reseña</button>
-    </div>
-  </div>
-</main>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                </div>
 
-<div class="toast" id="toast"></div>
+                <div class="form-group">
+                    <label for="interes">Plataforma Favorita:</label>
+                    <select id="interes" name="interes">
+                        <option value="pc">PC Master Race</option>
+                        <option value="playstation">PlayStation 5</option>
+                        <option value="xbox">Xbox Series X/S</option>
+                        <option value="nintendo">Nintendo Switch</option>
+                    </select>
+                </div>
 
-<footer>
-  <p>&copy; 2026 GameReviews. Desarrollado para la Primera Entrega.</p>
-</footer>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje o Sugerencia:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribí acá tu comentario..."></textarea>
+                </div>
 
-<script>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
 
-  const INITIAL = [
-    { id: 1, game: 'Elden Ring', genre: 'RPG', author: 'Marcos', platform: 'PC', stars: 5, text: '...', date: '12 abr 2026' }
-  ];
-  let reviews = JSON.parse(localStorage.getItem('vg_reviews') || 'null') || INITIAL;
-  let nextId = reviews.length ? Math.max(...reviews.map(r => r.id)) + 1 : 6;
-  let currentStar = 0;
+    <footer>
+        <p>&copy; 2026 GG Reviews. Desarrollado para la Primera Entrega.</p>
+    </footer>
 
-  function setStar(n) {
-    currentStar = n;
-    const labels = ['', 'Malo', 'Regular', 'Bueno', 'Muy bueno', 'Excelente'];
-    document.getElementById('star-label').textContent = labels[n];
-    document.querySelectorAll('.star-b').forEach((b, i) => b.classList.toggle('lit', i < n));
-  }
-
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2000);
-  }
-
-  function submitReview() {
-    const game = document.getElementById('f-game').value.trim();
-    const text = document.getElementById('f-text').value.trim();
-    
-    if (!game) { showToast('Ingresá el nombre del juego'); return; }
-    if (!currentStar) { showToast('Seleccioná una puntuación'); return; }
-    if (!text) { showToast('Escribí tu reseña'); return; }
-
-    const now = new Date();
-    const date = now.toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' });
-
-    reviews.push({
-      id: nextId++,
-      game,
-      genre: document.getElementById('f-genre').value,
-      author: document.getElementById('f-author').value.trim() || 'Anónimo',
-      platform: document.getElementById('f-platform').value,
-      stars: currentStar,
-      text,
-      date
-    });
-    
-    localStorage.setItem('vg_reviews', JSON.stringify(reviews));
-
-    showToast('¡Reseña publicada con éxito!');
-    
-
-    setTimeout(() => {
-      window.location.href = 'reseñas.html';
-    }, 1200);
-  }
-</script>
 </body>
 </html>
