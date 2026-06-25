@@ -300,3 +300,18 @@ nav a.active {
         padding: 1.2rem;
     }
 }
+
+.redes-sociales {
+    margin-bottom: 15px;
+}
+
+.redes-sociales a {
+    color: #c4c4cc;
+    font-size: 28px;
+    margin: 0 12px;
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: #8257e5;
+}
