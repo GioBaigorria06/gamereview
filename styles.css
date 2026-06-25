@@ -306,12 +306,38 @@ nav a.active {
 }
 
 .redes-sociales a {
-    color: #c4c4cc;
-    font-size: 28px;
+    color: #8257e5 !important;
+    text-decoration: none;
+    font-size: 1.8rem;
     margin: 0 12px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+}
+
+.redes-sociales a:visited {
+    color: #8257e5 !important;
 }
 
 .redes-sociales a:hover {
-    color: #8257e5;
+    color: #9466ff !important;
+    transform: translateY(-3px);
+}
+
+.redes-sociales a i {
+    color: inherit;
+}
+
+.fa-whatsapp:hover {
+    color: #25D366 !important;
+}
+
+.fa-facebook-f:hover {
+    color: #1877F2 !important;
+}
+
+.fa-instagram:hover {
+    color: #E4405F !important;
+}
+
+.fa-x-twitter:hover {
+    color: #ffffff !important;
 }
