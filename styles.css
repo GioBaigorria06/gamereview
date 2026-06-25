@@ -1,84 +1,87 @@
-/* ===== RESEÑAS ===== */
-
 .feed-title {
-    font-size: 28px;
-    margin-bottom: 15px;
+    color: #8257e5;
+    margin-bottom: 10px;
 }
 
 .feed-count {
-    color: #888;
+    color: #7c7c8a;
     margin-bottom: 20px;
-}
-
-.filters {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.filter-pill {
-    background: #222;
-    border: 1px solid #444;
-    color: #ddd;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.filter-pill:hover {
-    background: #333;
 }
 
 .review-card {
-    background: #1b1b1b;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 15px;
+    background-color: #202024;
+    border: 1px solid #29292e;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    border-color: #8257e5;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(130, 87, 229, 0.15);
 }
 
 .review-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 15px;
 }
 
 .review-game {
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: bold;
+    color: #fff;
 }
 
 .review-stars {
-    color: gold;
-    margin: 8px 0;
+    color: #f7b731;
+    margin: 6px 0;
+    font-size: 1rem;
 }
 
 .review-meta {
-    color: #aaa;
-    font-size: 14px;
+    color: #a8a8b3;
+    font-size: 0.9rem;
 }
 
 .genre-badge {
-    background: #333;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 12px;
+    background-color: #29292e;
+    color: #8257e5;
+    border: 1px solid #8257e5;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 .review-body {
     margin-top: 15px;
-    border-top: 1px solid #333;
     padding-top: 15px;
-    line-height: 1.6;
+    border-top: 1px solid #29292e;
+    color: #c4c4cc;
+    line-height: 1.7;
 }
 
 .review-date {
-    margin-top: 10px;
+    margin-top: 12px;
     text-align: right;
-    color: #888;
-    font-size: 12px;
+    color: #7c7c8a;
+    font-size: 0.8rem;
+}
+
+
+@media (max-width: 768px) {
+    .review-top {
+        flex-direction: column;
+    }
+
+    .genre-badge {
+        align-self: flex-start;
+    }
 }
 
 * {
